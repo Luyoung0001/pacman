@@ -1,107 +1,232 @@
 <html>
-	<head>
-		<meta charset="utf8">
-		<title>外星人的乐园</title>
-		<meta name="description" content="吃豆人（Pac-Man）是上世纪80年代一款经典街机游戏，游戏的主角小精灵的形象甚至被作为一种大众文化符号。本游戏使用HTML5完美移植该游戏，设置了多个关卡并改良了幽灵的寻路算法，可作为Canvas游戏学习的案例演示。">
-		<meta name="keywords" content="吃豆人,FC吃豆子,吃豆游戏,Pac-Man,HTML5游戏,Javascript游戏引擎">
-		<link rel="shortcut icon" href="xxx/favicon.png">
-		<style>
-			html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h3,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}
-			.wrapper{
-				width: 960px;
-				margin:0 auto;
-				color:#999;
-			}
-			canvas{display:block;background: #000;}
-			.mod-game .info{
-				padding: 10px 0;
-				margin-bottom: 5px;
-				line-height: 20px;
-				text-align: center;
-				color: #666;
-			}
-			.mod-game .info p{
-				line-height: 20px;
-				font-size: 14px;
-				color: #666;
-			}
-			.mod-game .intro{
-				padding: 10px 15px;
-				background: #f8f8f8;
-				border-radius: 5px;
-			}
-			.mod-game .intro p{
-				line-height: 22px;
-				text-indent: 2em;
-				font-size: 14px;
-				color: #666;
-			}
-			.mod-button{
-				height: 32px;
-				padding: 15px 0;
-				text-align: center;
-			}
-			.mod-button span,.mod-button a{
-				vertical-align: middle;
-			}
-			.mod-button .btn{
-				display: inline-block;
-				padding: 0 12px;
-				line-height: 26px;
-				color: #24292f;
-				border: 1px solid #dddede;
-				text-decoration: none;
-				font-size: 13px;
-				color: #24292f;
-				border-radius: 2px;
-			}
-		</style>
-   <!-- 以下是备案号的style -->
-    <style>
-      .bottom-center {
-        text-align: center;
-        padding: 20px;
-        background-color: #f2f2f2;
-      }
-  
-      .bottom-center p {
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-  
-      .bottom-center a {
-        color: #337ab7;
-        text-decoration: none;
-      }
-  
-      .bottom-center a:hover {
-        color: #23527c;
-        text-decoration: underline;
-      }
-    </style>
 
-	</head>
-	<body>
-		<div class="wrapper">
-			<div class="mod-game">
-				<canvas id="canvas" width="960" height="640">不支持画布</canvas>
-				<div class="info">
-					<p>按 [空格键] 暂停或继续</p>
-					<p>Press [space] to pause or continue</p>
-				</div>
+<head>
+  <meta charset="utf8">
+  <title>外星人的乐园</title>
+  <meta name="description"
+    content="吃豆人（Pac-Man）是上世纪80年代一款经典街机游戏，游戏的主角小精灵的形象甚至被作为一种大众文化符号。本游戏使用HTML5完美移植该游戏，设置了多个关卡并改良了幽灵的寻路算法，可作为Canvas游戏学习的案例演示。">
+  <meta name="keywords" content="吃豆人,FC吃豆子,吃豆游戏,Pac-Man,HTML5游戏,Javascript游戏引擎">
+  <link rel="shortcut icon" href="/xxx/favicon.png">
+  <style>
+    html {
+      color: #000;
+      background: #FFF
+    }
 
-			</div>
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    code,
+    form,
+    fieldset,
+    legend,
+    input,
+    textarea,
+    p,
+    blockquote,
+    th,
+    td {
+      margin: 0;
+      padding: 0
+    }
 
-		</div>
-		<script src="xxx/game.js"></script>
-		<script src="xxx/index.js"></script>
-		<script async defer src="https://buttons.github.io/buttons.js"></script>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0
+    }
 
-	</body>
-  <footer class="bottom-center">
-    <div style="width:300px;margin:0 auto; padding:20px 0;">
-      <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=61011602000582" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">陕公网安备 61011602000582号</p></a>
+    fieldset,
+    img {
+      border: 0
+    }
+
+    address,
+    caption,
+    cite,
+    code,
+    dfn,
+    em,
+    strong,
+    th,
+    var {
+      font-style: normal;
+      font-weight: normal
+    }
+
+    ol,
+    ul {
+      list-style: none
+    }
+
+    caption,
+    th {
+      text-align: left
+    }
+
+    h1,
+    h3,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 100%;
+      font-weight: normal
+    }
+
+    q:before,
+    q:after {
+      content: ''
+    }
+
+    abbr,
+    acronym {
+      border: 0;
+      font-variant: normal
+    }
+
+    sup {
+      vertical-align: text-top
+    }
+
+    sub {
+      vertical-align: text-bottom
+    }
+
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      font-size: 100%;
+    }
+
+    legend {
+      color: #000
+    }
+
+    .wrapper {
+      width: 960px;
+      margin: 0 auto;
+      color: #999;
+    }
+
+    canvas {
+      display: block;
+      background: #000;
+    }
+
+    .mod-game .info {
+      padding: 10px 0;
+      margin-bottom: 5px;
+      line-height: 20px;
+      text-align: center;
+      color: #666;
+    }
+
+    .mod-game .info p {
+      line-height: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .mod-game .intro {
+      padding: 10px 15px;
+      background: #f8f8f8;
+      border-radius: 5px;
+    }
+
+    .mod-game .intro p {
+      line-height: 22px;
+      text-indent: 2em;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .mod-button {
+      height: 32px;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .mod-button span,
+    .mod-button a {
+      vertical-align: middle;
+    }
+
+    .mod-button .btn {
+      display: inline-block;
+      padding: 0 12px;
+      line-height: 26px;
+      color: #24292f;
+      border: 1px solid #dddede;
+      text-decoration: none;
+      font-size: 13px;
+      color: #24292f;
+      border-radius: 2px;
+    }
+  </style>
+  <!-- 以下是备案号的style -->
+  <style>
+    .bottom-center {
+      text-align: center;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    .bottom-center p {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .bottom-center a {
+      color: #337ab7;
+      text-decoration: none;
+    }
+
+    .bottom-center a:hover {
+      color: #23527c;
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="mod-game">
+      <canvas id="canvas" width="960" height="640">不支持画布</canvas>
+      <div class="info">
+        <p>按 [空格键] 暂停或继续</p>
+        <p>Press [space] to pause or continue</p>
+      </div>
+
     </div>
-    <p>ICP备案号：<u><a href="https://beian.miit.gov.cn" target="_blank">陕ICP备2023008206号-1</a></u></p>
-  </footer>
+
+  </div>
+  <script src="/xxx/game.js"></script>
+  <script src="/xxx/index.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</body>
+<footer class="bottom-center">
+  <div style="margin:0 auto; padding:20px 0;">
+    <img src="/xxx/beian.png" alt="" style="height: 1em;">
+    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=61011602000582">陕公网安备 61011602000582号</a>&emsp;&emsp;
+    <a href="https://beian.miit.gov.cn" target="_blank">陕ICP备2023008206号-1</a>
+  </div>
+</footer>
+
 </html>
