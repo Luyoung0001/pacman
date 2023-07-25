@@ -8,12 +8,12 @@ import (
 func main() {
 	r := gin.Default()
 	// 加载静态文件
-	r.Static("/xxx", "/Users/luliang/GoLand/pacman/statics")
-	r.LoadHTMLGlob("/Users/luliang/GoLand/pacman/index.html")
+	r.Static("/xxx", "/root/pacman/statics")
+	r.LoadHTMLGlob("/root/pacman/index.html")
 
-	r.GET("/home", func(c *gin.Context) {
+	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
 	})
 
-	r.Run(":9092")
+	r.Run(":80")
 }
