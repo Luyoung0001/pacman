@@ -1,5 +1,4 @@
 'use strict';
-// requestAnimationFrame polyfill
 if (!Date.now)
 Date.now = function() { return new Date().getTime(); };
 (function() {
