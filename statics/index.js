@@ -1,12 +1,3 @@
-/*!
- * Pacman - HTML5 Game
- * https://passer-by.com/pacman/
- *
- * Copyright (c) 2016-present, HaoLe Zheng
- * Released under the MIT License.
- * https://github.com/mumuy/pacman/blob/master/LICENSE
-*/
-
 //主程序,业务逻辑
 (function(){
 	var _COIGIG = [		//关卡
@@ -46,10 +37,14 @@
 			],
 			'wall_color':'#09f',
 			'goods':{		//能量豆
-				'1,3':1,
-				'26,3':1,
-				'1,23':1,
-				'26,23':1
+				'1,3':20,
+				'26,3':20,
+				'1,23':2,
+				'26,23':2,
+        '1,4':10,
+				'26,4':10,
+				'1,26':10,
+				'26,24':10
 			}
 		},
 		{				//第2关
@@ -518,8 +513,8 @@
 	_COLOR = ['#F00','#F93','#0CF','#F9C'],	//NPC颜色
 	_COS = [1,0,-1,0],
 	_SIN = [0,1,0,-1],
-	_LIFE = 5,				//玩家生命值
-	_SCORE = 0;				//玩家得分
+	_LIFE = 500,				//玩家生命值
+	_SCORE = 10000;				//玩家得分
 
 	var game = new Game('canvas');
 	//启动页
@@ -579,7 +574,7 @@
 			x:game.width-10,
 			y:game.height-5,
 			draw:function(context){
-				var text = '© passer-by.com';
+				var text = 'luyoung.online';
 				context.font = '12px/20px PressStart2P';
 				context.textAlign = 'left';
 				context.textBaseline = 'top';
@@ -590,7 +585,7 @@
 				context.fillText(text,this.x,this.y);
 			}
 		}).bind('click',function(){
-			window.open('https://passer-by.com');
+			window.open('https://luyoung.online');
 		});
 		//事件绑定
 		stage.bind('keydown',function(e){
@@ -953,7 +948,7 @@
 				location:map,
 				coord:{x:13.5,y:23},
 				orientation:2,
-				speed:2,
+				speed:5,
 				frames:10,
 				update:function(){
 					var coord = this.coord;
