@@ -1,17 +1,4 @@
 'use strict';
-/*!
- * Pacman - HTML5 Game
- * https://passer-by.com/pacman/
- *
- * Copyright (c) 2016-present, HaoLe Zheng
- * Released under the MIT License.
- * https://github.com/mumuy/pacman/blob/master/LICENSE
-*/
-
-/*
-* 小型游戏引擎
-*/
-
 // requestAnimationFrame polyfill
 if (!Date.now)
 Date.now = function() { return new Date().getTime(); };
