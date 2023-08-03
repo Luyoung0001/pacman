@@ -1061,7 +1061,7 @@
 		});
 	})();
 
-	const myFont = new FontFace('PressStart2P', 'url(./PressStart2P.ttf)');
+	const myFont = new FontFace('PressStart2P', 'url(xxx/PressStart2P.ttf)');
 	myFont.load().then(font => {
 	  	document.fonts.add(font);
 		game.init();
